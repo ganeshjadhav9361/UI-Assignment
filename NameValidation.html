@@ -1,0 +1,41 @@
+<html>
+	<head>
+		<title> Name Validation</title>
+		<style>
+			input{
+				width: 400px;
+				height: 40px;
+			}
+		</style>
+		<script type='text/javascript'>
+			function ValidationName(str){
+				str= str.toLowerCase();
+				let flag= true;
+				let span= document.getElementById("s");
+				for(var i=0;i<str.length;i++)
+				{
+					if(!(str.charCodeAt(i)>=97 && str.charCodeAt(i)<=122 || str.charCodeAt(i)==32))
+					{
+						flag= false;
+					}
+				}
+				
+				if(flag)
+				{
+					span.innerHTML="";
+					span.style.color="white";
+				}
+				else{
+					span.innerHTML="Invalid Name";
+					span.style.color="red";
+				}
+			}
+		</script>
+	</head>
+	
+	<body>
+		<input type='text' name='' value='' placeholder='Enter your Name' 
+					onkeyup="ValidationName(this.value)" />
+		<span id="s"></span>
+	<body>
+</html>
