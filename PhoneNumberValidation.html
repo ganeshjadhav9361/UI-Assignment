@@ -7,7 +7,7 @@
 				height: 40px;
 			}
 		</style>
-		<script typr='text/javascript'>
+		<script type='text/javascript'>
 			function ValidationPhone(str){
 				str=document.getElementById("d").value;
 				let flag= true;
@@ -17,10 +17,10 @@
 					flag= false;
 				}
 				else{
-				for(var i=0;i<str.lenght;i++){
-				if((str.charCodeAt(i)>=48 && str.charCodeAt(i)<=57))
+				for(let i=0;i<str.length;i++){
+				if (str.charCodeAt(i) < 48 || str.charCodeAt(i) > 57) 
 				{
-					flag= false;
+					flag = false;
 					break;
 				}
 				}
